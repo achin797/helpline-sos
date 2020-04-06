@@ -10,7 +10,7 @@ function AppRouter() {
       <Switch>
         <Route exact path={"/"} component={LoginPage} />
         <Route path={"/login"} component={LoginPage} />
-        <Route path="/signup" render={(props) => <LoginPage {...props} signUp={true}/>} />
+        <Route path="/register" render={(props) => <LoginPage {...props} register={true}/>} />
       </Switch>
     </Router>
   );
