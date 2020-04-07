@@ -1,8 +1,11 @@
 import React from 'react';
 import {Button, Form, Input, Checkbox} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import {useHistory} from "react-router-dom";
 
 function LoginForm() {
+  const history = useHistory();
+
   return (
 
     <Form
@@ -53,10 +56,10 @@ function LoginForm() {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button type="primary" htmlType="submit" className="login-form-button" onClick={() => history.push("/patients")}>
           Log in
         </Button>
-        Or <a href="">register now!</a>
+        Or <a onClick={()=>history.push("/register")}>register now!</a>
       </Form.Item>
     </Form>
   );
